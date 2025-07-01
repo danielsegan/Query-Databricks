@@ -1,0 +1,8 @@
+# List of VMSS w/ SKU and Qty
+
+resources
+| where type =~ 'microsoft.compute/virtualmachinescalesets'
+| project skuName = tostring(sku.name), skuCapacity = tostring(sku.capacity)
+
+
+PowerShell Gallery | DatabricksPS 1.13.0.0
